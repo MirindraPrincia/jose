@@ -1,0 +1,156 @@
+export type Video = {
+    slug: string;
+    title: string;
+    category: 'mariage' | 'corporate' | 'clip' | 'evenement' | 'drone';
+    description: string;
+    thumbnail: string;
+    videoUrl: string;
+    relatedSlugs: string[];
+    featured: boolean;
+    date: string;
+};
+
+export const categories = [
+    { value: 'all', label: 'Tout' },
+    { value: 'mariage', label: 'Mariage' },
+    { value: 'corporate', label: 'Corporate' },
+    { value: 'clip', label: 'Clip' },
+    { value: 'evenement', label: 'Événement' },
+    { value: 'drone', label: 'Drone' },
+] as const;
+
+export const videos: Video[] = [
+    {
+        slug: 'mariage-antananarivo-2025',
+        title: 'Mariage Antananarivo 2025',
+        category: 'mariage',
+        description: 'Un mariage élégant au cœur de la capitale. Tournage sur une journée complète avec drone et multi-caméra. Color grading cinématique pour un rendu unique.',
+        thumbnail: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-uhd_2560_1440_24fps.mp4',
+        relatedSlugs: ['mariage-antsirabe-2024', 'clip-musical-joe', 'corporate-kaldera'],
+        featured: true,
+        date: '2025-06-15',
+    },
+    {
+        slug: 'mariage-antsirabe-2024',
+        title: 'Mariage Antsirabe 2024',
+        category: 'mariage',
+        description: 'Cérémonie traditionnelle malgache dans la ville thermale. Captation multicam avec des séquences drone au coucher du soleil.',
+        thumbnail: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-uhd_2560_1440_24fps.mp4',
+        relatedSlugs: ['mariage-antananarivo-2025', 'evenement-gala-2024', 'drone-antananarivo'],
+        featured: true,
+        date: '2024-09-20',
+    },
+    {
+        slug: 'corporate-kaldera',
+        title: 'Corporate Kaldera Studio',
+        category: 'corporate',
+        description: 'Vidéo de présentation pour Kaldera Studio. Interview du fondateur, images des locaux et de l\'équipe en action.',
+        thumbnail: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4',
+        relatedSlugs: ['corporate-tech-startup', 'corporate-restaurant', 'clip-musical-joe'],
+        featured: true,
+        date: '2025-03-10',
+    },
+    {
+        slug: 'clip-musical-joe',
+        title: 'Clip Musical - Joe',
+        category: 'clip',
+        description: 'Clip musical tourné dans les rues d\'Antananarivo. Ambiance urbaine, plans serrés et montage rythmé sur la musique.',
+        thumbnail: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/4065388/4065388-uhd_2560_1440_24fps.mp4',
+        relatedSlugs: ['clip-artiste-mada', 'mariage-antananarivo-2025', 'evenement-festival-2024'],
+        featured: true,
+        date: '2025-01-25',
+    },
+    {
+        slug: 'drone-antananarivo',
+        title: 'Vue Aérienne Antananarivo',
+        category: 'drone',
+        description: 'Prises de vues aériennes de la capitale malgache. Lever de soleil sur les rizières et survol du centre-ville historique.',
+        thumbnail: 'https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/2611150/2611150-uhd_2560_1440_30fps.mp4',
+        relatedSlugs: ['drone-immobilier-villa', 'mariage-antsirabe-2024', 'evenement-gala-2024'],
+        featured: true,
+        date: '2025-04-01',
+    },
+    {
+        slug: 'evenement-gala-2024',
+        title: 'Gala Annuel 2024',
+        category: 'evenement',
+        description: 'Couverture complète du gala annuel. Ambiance prestige, discours, performances live et afterparty.',
+        thumbnail: 'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4',
+        relatedSlugs: ['evenement-festival-2024', 'corporate-kaldera', 'mariage-antananarivo-2025'],
+        featured: false,
+        date: '2024-12-01',
+    },
+    {
+        slug: 'corporate-tech-startup',
+        title: 'Startup Tech Madagascar',
+        category: 'corporate',
+        description: 'Présentation dynamique d\'une startup tech malgache. Du coworking aux réunions d\'équipe, un regard sur l\'innovation locale.',
+        thumbnail: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4',
+        relatedSlugs: ['corporate-kaldera', 'corporate-restaurant', 'evenement-gala-2024'],
+        featured: false,
+        date: '2024-11-15',
+    },
+    {
+        slug: 'clip-artiste-mada',
+        title: 'Clip - Artiste Mada',
+        category: 'clip',
+        description: 'Clip musical tourné en extérieur avec des paysages malgaches en toile de fond. Concept visuel fort et color grading chaud.',
+        thumbnail: 'https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/4065388/4065388-uhd_2560_1440_24fps.mp4',
+        relatedSlugs: ['clip-musical-joe', 'drone-antananarivo', 'mariage-antananarivo-2025'],
+        featured: false,
+        date: '2024-08-10',
+    },
+    {
+        slug: 'drone-immobilier-villa',
+        title: 'Villa de Luxe - Drone',
+        category: 'drone',
+        description: 'Visite aérienne d\'une villa de luxe pour une agence immobilière. Plans orbites, reveal et flythrough du domaine.',
+        thumbnail: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/2611150/2611150-uhd_2560_1440_30fps.mp4',
+        relatedSlugs: ['drone-antananarivo', 'corporate-kaldera', 'evenement-gala-2024'],
+        featured: false,
+        date: '2025-02-18',
+    },
+    {
+        slug: 'evenement-festival-2024',
+        title: 'Festival Musical 2024',
+        category: 'evenement',
+        description: 'Aftermovie du plus grand festival musical de Madagascar. Multi-caméra, drone et captation live des performances.',
+        thumbnail: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/4065388/4065388-uhd_2560_1440_24fps.mp4',
+        relatedSlugs: ['clip-musical-joe', 'clip-artiste-mada', 'evenement-gala-2024'],
+        featured: false,
+        date: '2024-07-20',
+    },
+    {
+        slug: 'corporate-restaurant',
+        title: 'Restaurant Le Gourmet',
+        category: 'corporate',
+        description: 'Vidéo promotionnelle pour un restaurant haut de gamme. Plans culinaires, ambiance et interview du chef.',
+        thumbnail: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4',
+        relatedSlugs: ['corporate-kaldera', 'corporate-tech-startup', 'drone-immobilier-villa'],
+        featured: false,
+        date: '2024-06-05',
+    },
+    {
+        slug: 'mariage-nosy-be-2024',
+        title: 'Mariage Nosy Be 2024',
+        category: 'mariage',
+        description: 'Mariage de rêve sur les plages de Nosy Be. Cérémonie pieds dans le sable, drone au coucher du soleil et fête sous les étoiles.',
+        thumbnail: 'https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=800',
+        videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-uhd_2560_1440_24fps.mp4',
+        relatedSlugs: ['mariage-antananarivo-2025', 'mariage-antsirabe-2024', 'drone-antananarivo'],
+        featured: false,
+        date: '2024-05-12',
+    },
+];
+
