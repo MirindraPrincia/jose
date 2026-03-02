@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, SetStateAction, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react';
 
 type SearchBarProps = {
     value: string;
@@ -9,7 +9,7 @@ type SearchBarProps = {
 
 export default function SearchBar({ value, onChange }: SearchBarProps) {
     const containerRef = useRef<HTMLDivElement>(null);
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false); // ✅ maintenant défini
 
     useEffect(() => {
         function onClickOutside(event: MouseEvent) {
@@ -24,10 +24,7 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
     }, [open]);
 
     return (
-        <div
-            ref={containerRef}
-            style={{ maxWidth: '400px', margin: '2rem auto', position: 'relative' }}
-        >
+        <div ref={containerRef} style={{ maxWidth: '400px', margin: '2rem auto', position: 'relative' }}>
             <button onClick={() => setOpen(true)}>Ouvrir la recherche</button>
             {open && (
                 <input
