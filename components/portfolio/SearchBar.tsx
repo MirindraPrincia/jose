@@ -1,11 +1,15 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { Dispatch, SetStateAction, useRef, useEffect } from 'react';
 
-export default function SearchTest() {
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState('');
+type SearchBarProps = {
+    value: string;
+    onChange: Dispatch<SetStateAction<string>>;
+};
+
+export default function SearchBar({ value, onChange }: SearchBarProps) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         function onClickOutside(event: MouseEvent) {
@@ -20,7 +24,10 @@ export default function SearchTest() {
     }, [open]);
 
     return (
-        <div ref={containerRef} style={{ maxWidth: '400px', margin: '2rem auto', position: 'relative' }}>
+        <div
+            ref={containerRef}
+            style={{ maxWidth: '400px', margin: '2rem auto', position: 'relative' }}
+        >
             <button onClick={() => setOpen(true)}>Ouvrir la recherche</button>
             {open && (
                 <input
@@ -28,7 +35,7 @@ export default function SearchTest() {
                     type="text"
                     placeholder="Tape ici..."
                     value={value}
-                    onChange={(e) => setValue(e.target.value)}
+                    onChange={(e) => onChange(e.target.value)}
                     style={{
                         marginTop: '1rem',
                         width: '100%',
